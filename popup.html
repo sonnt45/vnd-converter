@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VND Converter Config</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        width: 320px;
+        padding: 10px;
+      }
+
+      h2 {
+        margin-top: 10px;
+        font-size: 18px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+      }
+
+      .setting-row,
+      .rate-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      label {
+        font-weight: 600;
+        flex: 1;
+      }
+
+      input {
+        width: 100px;
+        text-align: right;
+      }
+
+      .rate-row .current-rate {
+        display: block;
+        font-size: 12px;
+        color: #666;
+        margin-top: 2px;
+      }
+
+      #buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Cấu hình</h2>
+    <div id="general-settings">
+      <div class="setting-row">
+        <label for="refresh-period">Làm mới sau n phút</label>
+        <input id="refresh-period" type="number" min="1" />
+      </div>
+      <div class="setting-row">
+        <label for="decimal-places">Số lẻ thập phân</label>
+        <input id="decimal-places" type="number" min="0" max="6" />
+      </div>
+    </div>
+
+    <h2>Tỷ giá</h2>
+    <div id="rates"></div>
+
+    <div id="buttons">
+      <button id="reset-btn">Đặt lại</button>
+      <button id="save-btn">Lưu</button>
+    </div>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
